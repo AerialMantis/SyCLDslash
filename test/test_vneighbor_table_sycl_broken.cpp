@@ -56,7 +56,7 @@ TEST(TestVNeihborTable, Instantiate)
 	cl::sycl::buffer<IndexType,1> nidx_buf(range<1>(1));
 	cl::sycl::buffer<bool,1> doit_buf(range<1>(1));
 
-	cl::sycl::cpu_selector cpu_sel;
+	cl::sycl::gpu_selector cpu_sel;
 	cl::sycl::queue MyQueue(cpu_sel);
 	{
 	MyQueue.submit([&](cl::sycl::handler& cgh) {

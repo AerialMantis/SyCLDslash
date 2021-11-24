@@ -163,7 +163,7 @@ SyCLCBVSpinorToQDPLatticeFermion(const SyCLCBFineVSpinor<MGComplex<T>,VN, 4>& sy
 	IndexArray c_dims = sycl_in.GetInfo().GetCBLatticeDimensions();
 	IndexArray g_dims = sycl_in.GetGlobalInfo().GetCBLatticeDimensions();
 
-	cl::sycl::cpu_selector cpu;
+	cl::sycl::gpu_selector cpu;
 	cl::sycl::queue q(cpu);
 
 #pragma omp parallel for
@@ -280,7 +280,7 @@ QDPGaugeFieldToSyCLCBVGaugeField(const GF& qdp_in,
 	IndexArray coarse_dims = sycl_out.GetInfo().GetCBLatticeDimensions();
 	IndexArray fine_dims = sycl_out.GetGlobalInfo().GetCBLatticeDimensions();
 
-	cl::sycl::cpu_selector cpu;
+	cl::sycl::gpu_selector cpu;
 	cl::sycl::queue q(cpu);
 
 #pragma omp parallel for

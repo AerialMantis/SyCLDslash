@@ -28,7 +28,7 @@ public:
 	// This is where we grab the 'N' out of the T
 	static const size_t N = static_cast<size_t>(T::value);
 
-	cpu_selector my_cpu;
+	gpu_selector my_cpu;
 	queue MyQueue;
 	buffer<float,1> f_buf;
 	buffer<float,1>& getBuf() { return f_buf; }
